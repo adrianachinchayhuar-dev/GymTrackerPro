@@ -1,17 +1,30 @@
 package com.tecsup.data.local.entity
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "usuarios")
+@Entity
 data class Usuario(
 
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
 
-    val nombre: String,
+    @ColumnInfo(name = "nombre_usuario")
+    val nombreUsuario: String,
 
-    val correo: String,
+    @ColumnInfo(name = "password")
+    val password: String,
 
-    val edad: Int
+    @ColumnInfo(name = "nombre_completo")
+    val nombreCompleto: String,
+
+    @ColumnInfo(name = "email")
+    val email: String,
+
+    @ColumnInfo(name = "edad")
+    val edad: Int,
+
+    @ColumnInfo(name = "fecha_registro")
+    val fechaRegistro: String
 )
