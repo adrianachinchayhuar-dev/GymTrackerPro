@@ -11,6 +11,14 @@ class UsuarioRepository(
         usuarioDao.insertarUsuario(usuario)
     }
 
+    suspend fun login(
+        usuario: String,
+        password: String
+    ): Usuario? {
+
+        return usuarioDao.login(usuario, password)
+    }
+
     suspend fun obtenerUsuarios(): List<Usuario> {
         return usuarioDao.obtenerUsuarios()
     }
